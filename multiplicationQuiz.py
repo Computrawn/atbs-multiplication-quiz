@@ -21,17 +21,17 @@ for questionNumber in range(numberOfQuestions):
     # main loop
     if end_time < 8:
         while int(response) != num1 * num2:
-                if tries < 2:
-                    print("Incorrect. Try again: ")
-                    response = input(prompt)
-                    tries += 1
-                else:
-                    print("Limit exceeded.")
-                    break
+            if tries < 2:
+                print("Incorrect. Try again: ")
+                response = input(prompt)
+                tries += 1
+            else:
+                print("Limit exceeded.")
+                break
         else:
-                print(f"Correct!")
-                correctAnswers += 1
-                time.sleep(1)
+            print(f"Correct!")
+            correctAnswers += 1
+            time.sleep(1)
     else:
         print('Timed Out.')
     print(end_time)
