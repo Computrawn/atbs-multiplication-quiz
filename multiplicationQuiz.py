@@ -4,9 +4,22 @@
 import random, time
 
 
-numberOfQuestions = 10
 correctAnswers = 0
 
+while True:
+    numberOfQuestions = (input('How many questions do you want to answer?\n'))
+    try:
+        numberOfQuestions = int(numberOfQuestions)
+    except ValueError:
+        print("Please input integer value.")
+        continue
+    if numberOfQuestions < 1:
+        print('Please enter a positive number.')
+        continue
+    break
+
+
+# main loop
 for questionNumber in range(numberOfQuestions):
     # random numbers 0-9
     num1 = random.randint(0, 9)
@@ -17,26 +30,25 @@ for questionNumber in range(numberOfQuestions):
     response = input(prompt)
     # number of tries
     tries = 0
-    # main loop
+    # answer loop
     while int(response) != num1 * num2:
         if tries < 2:
             print("Incorrect. Try again: ")
             response = input(prompt)
             tries += 1
         else:
-            print("Limit exceeded.")
             break
     else:
-        print(f"Correct!")
-        correctAnswers += 1
-        time.sleep(1)
+        pass
     # timer end
     end_time = time.time() - start_time
-    if end_time < 8:
-        pass
+    if end_time < 8 and int(response) == num1 * num2:
+        print(f'Correct. Question answered in {end_time:.2f} seconds')
+        correctAnswers += 1
+    elif end_time < 8 and int(response) != num1 * num2:
+        print(f'Number of tries exceeded.')
     else:
-        print('However, answer not counted because time limit exceeded.')
-        correctAnswers -= 1
+        print(f'Time limit exceeded. It took you {end_time:.2f} seconds to answer the question.')
+    time.sleep(1)
 
-
-print(f'{correctAnswers} of {numberOfQuestions} answered correctly.')
+print(f'Final score: {correctAnswers / numberOfQuestions * 100:.0f}')
