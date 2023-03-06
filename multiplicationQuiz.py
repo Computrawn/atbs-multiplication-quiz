@@ -11,30 +11,32 @@ for questionNumber in range(numberOfQuestions):
     # random numbers 0-9
     num1 = random.randint(0, 9)
     num2 = random.randint(0, 9)
-    # time keeper
+    # timer start
     start_time = time.time()
     prompt = f'{questionNumber + 1}: {num1} * {num2} = '
     response = input(prompt)
-    end_time = time.time() - start_time
     # number of tries
     tries = 0
     # main loop
-    if end_time < 8:
-        while int(response) != num1 * num2:
-            if tries < 2:
-                print("Incorrect. Try again: ")
-                response = input(prompt)
-                tries += 1
-            else:
-                print("Limit exceeded.")
-                break
+    while int(response) != num1 * num2:
+        if tries < 2:
+            print("Incorrect. Try again: ")
+            response = input(prompt)
+            tries += 1
         else:
-            print(f"Correct!")
-            correctAnswers += 1
-            time.sleep(1)
+            print("Limit exceeded.")
+            break
     else:
-        print('Timed Out.')
-    print(end_time)
+        print(f"Correct!")
+        correctAnswers += 1
+        time.sleep(1)
+    # timer end
+    end_time = time.time() - start_time
+    if end_time < 8:
+        pass
+    else:
+        print('However, answer not counted because time limit exceeded.')
+        correctAnswers -= 1
 
 
 print(f'{correctAnswers} of {numberOfQuestions} answered correctly.')
