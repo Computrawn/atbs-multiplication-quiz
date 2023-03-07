@@ -48,7 +48,7 @@ for questionNumber in range(numberOfQuestions):
         print(f"Correct. Question answered in {end_time:.2f} seconds")
         correctAnswers += 1
     elif end_time < 8 and response != num1 * num2:
-        print(f"Incorrect. Number of tries exceeded.")
+        print("Incorrect. Number of tries exceeded.")
     else:
         print(
             f"Time limit exceeded. It took you {end_time:.2f} seconds to answer the question."
