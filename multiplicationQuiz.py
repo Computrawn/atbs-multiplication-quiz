@@ -1,7 +1,8 @@
 # Python3
 # multiplicationQuiz — An exercise in validating user input. For more info, see project_details.txt.
 
-import random, time
+import random
+import time
 
 
 correctAnswers = 0
@@ -50,7 +51,8 @@ for questionNumber in range(numberOfQuestions):
     elif end_time < 8 and response != num1 * num2:
         print(f'Incorrect. Number of tries exceeded.')
     else:
-        print(f'Time limit exceeded. It took you {end_time:.2f} seconds to answer the question.')
+        print(
+            f'Time limit exceeded. It took you {end_time:.2f} seconds to answer the question.')
     time.sleep(1)
 
 print(f'Final score: {correctAnswers / numberOfQuestions * 100:.0f}')
