@@ -29,7 +29,7 @@ for questionNumber in range(numberOfQuestions):
     response = input(prompt)
     # number of tries
     tries = 0
-    # integer validation loop
+    # integer and answer validation loop
     while True:
         try:
             response = int(response)
@@ -43,6 +43,7 @@ for questionNumber in range(numberOfQuestions):
             break
     # timer end
     end_time = time.time() - start_time
+    # limit validation loop
     if end_time < 8 and response == num1 * num2:
         print(f'Correct. Question answered in {end_time:.2f} seconds')
         correctAnswers += 1
