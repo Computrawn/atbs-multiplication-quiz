@@ -1,5 +1,5 @@
 # Python3
-# multiplicationQuiz — An exercise in validating user input. See project_details.txt for details.
+# multiplicationQuiz — An exercise in validating user input. For more info, see project_details.txt.
 
 import random, time
 
@@ -29,7 +29,7 @@ for questionNumber in range(numberOfQuestions):
     response = input(prompt)
     # number of tries
     tries = 0
-    # answer loop
+    # integer validation loop
     while True:
         try:
             response = int(response)
