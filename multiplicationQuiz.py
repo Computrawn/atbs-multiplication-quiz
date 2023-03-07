@@ -18,7 +18,6 @@ while True:
         continue
     break
 
-
 # main loop
 for questionNumber in range(numberOfQuestions):
     # random numbers 0-9
@@ -31,22 +30,24 @@ for questionNumber in range(numberOfQuestions):
     # number of tries
     tries = 0
     # answer loop
-    while int(response) != num1 * num2:
-        if tries < 2:
+    while True:
+        try:
+            response = int(response)
+        except ValueError:
+            print('Please enter integer value.')
+        if response != num1 * num2 and tries < 2:
             print("Incorrect. Try again: ")
             response = input(prompt)
             tries += 1
         else:
             break
-    else:
-        pass
     # timer end
     end_time = time.time() - start_time
-    if end_time < 8 and int(response) == num1 * num2:
+    if end_time < 8 and response == num1 * num2:
         print(f'Correct. Question answered in {end_time:.2f} seconds')
         correctAnswers += 1
-    elif end_time < 8 and int(response) != num1 * num2:
-        print(f'Number of tries exceeded.')
+    elif end_time < 8 and response != num1 * num2:
+        print(f'Incorrect. Number of tries exceeded.')
     else:
         print(f'Time limit exceeded. It took you {end_time:.2f} seconds to answer the question.')
     time.sleep(1)
