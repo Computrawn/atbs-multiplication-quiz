@@ -1,5 +1,7 @@
 .DS_Store
 .project
 *.pyc
+.idea
 venv
-.vscode
+credentials*.json
+logging.txt
