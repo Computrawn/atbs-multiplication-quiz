@@ -14,5 +14,5 @@ The user gets three tries to enter the correct answer before the program moves o
 Eight seconds after first displaying the question, the question is marked as incorrect even if the user enters the correct answer after the 8-second limit.
 
 **Excerpt From Automate the Boring Stuff with Python: Practical Programming for Total Beginners, 2nd Edition
-Al Sweigart
+Al Sweigart  
 This material may be protected by copyright.**
