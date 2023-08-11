@@ -1,8 +1,17 @@
-# Python3
-# multiplicationQuiz — An exercise in validating user input. For more info, see project_details.txt.
+#!/usr/bin/env python3
+# multiplication_quiz.py — An exercise in understanding input validation.
+# For more information, see README.md
 
+import logging
 import random
 import time
+
+logging.basicConfig(
+    level=logging.DEBUG,
+    filename="logging.txt",
+    format="%(asctime)s -  %(levelname)s -  %(message)s",
+)
+logging.disable(logging.CRITICAL)  # Note out to enable logging.
 
 correctAnswers = 0
 
